@@ -104,14 +104,6 @@
         "n_it": 0
     },
     "postprocessing": {
-        "binarize_prediction": {
-            "thr": 0.5
-        },
-        "remove_small": {
-            "thr": 300,
-            "unit": "vox"
-        },
-        "fill_holes": {}
     },
     "evaluation_parameters": {
         "targetSize": {
