@@ -1,7 +1,7 @@
 {
     "command": "train",
-    "gpu": 1,
-    "log_directory": "tumor_segmentation_128x128x32-random_seed=11_n=00",
+    "gpu": 0,
+    "log_directory": "tumor_segmentation_128x128x32_final",
     "model_name": "tumor",
     "debugging": true,
     "object_detection_params": {
@@ -11,8 +11,8 @@
             1.2,
             1.0
         ],
-        "gpu": 1,
-        "log_directory": "tumor_segmentation_128x128x32-random_seed=11_n=00"
+        "gpu": 0,
+        "log_directory": "tumor_segmentation_128x128x32_final"
     },
     "loader_parameters": {
         "bids_path": "/home/GRAMES.POLYMTL.CA/anlemj/tumor_segmentation_20201005",
@@ -52,12 +52,12 @@
     },
     "split_dataset": {
         "fname_split": null,
-        "random_seed": 11,
+        "random_seed": 1200,
         "center_test": [],
         "method": "lumbar",
         "balance": "tumor_type",
-        "train_fraction": 0.6,
-        "test_fraction": 0.2
+        "train_fraction": 0.75,
+        "test_fraction": 0.0
     },
     "training_parameters": {
         "batch_size": 8,
@@ -104,6 +104,14 @@
         "n_it": 0
     },
     "postprocessing": {
+        "binarize_prediction": {
+            "thr": 0.5
+        },
+        "remove_small": {
+            "thr": 100,
+            "unit": "vox"
+        },
+        "fill_holes": {}
     },
     "evaluation_parameters": {
         "targetSize": {
