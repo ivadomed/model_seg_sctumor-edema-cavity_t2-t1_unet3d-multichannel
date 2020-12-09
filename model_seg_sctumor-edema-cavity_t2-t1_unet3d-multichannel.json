@@ -108,7 +108,7 @@
             "thr": 0.5
         },
         "remove_small": {
-            "thr": 100,
+            "thr": [100, 250, 250, 100],
             "unit": "vox"
         },
         "fill_holes": {}
